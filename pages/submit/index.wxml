@@ -1,0 +1,48 @@
+<view class="page">
+  <!-- <view class="cover">
+    <image src="https://img.alicdn.com/imgextra/i4/2154413808/TB2GHyqddqUQKJjSZFIXXcOkFXa_!!2154413808.jpg_310x310.jpg" lazy-load="true" mode="aspectFill"></image>
+  </view> -->
+  <view class="info">
+    <view class="info-pleft">
+      <text class="info-price">数据库</text>
+    </view>
+    <view class="info-pright">
+      <text>作业内容</text>
+    </view>
+    <view class="info-title">完成习题2.2.2</view>
+    <view class="info-recommend">
+      <view>特殊说明:</view>
+      <view>
+        大题不抄题目，小题抄题目，并判断所属相应范式
+      </view>
+    </view>
+  </view>
+
+  <view class="detail">
+    <view class="detail-btn" wx:if="{{!showImageDetail}}" bindtap="showDetail">
+      <text>任课老师:</text>
+      <text>王小兵></text>
+    </view>
+    <view class="detail-list" wx:if="{{showImageDetail}}">
+      <view class="detail-title">商品详情</view>
+      <block wx:for="{{imgUrls}}" wx:key="*this">
+        <image src="{{item}}" mode="widthFix"></image>
+      </block>
+    </view>
+  </view>
+</view>
+
+<view style="height:100rpx;"></view>
+
+<view class="buy">
+  <view class="buy-price">
+    <text>最晚提交时间：</text>
+  </view>
+  <text>12.12</text>
+  <!-- <view class="buy-share">
+    <image src="../../images/share.png" mode="aspectFit" />
+  </view> -->
+  <view class="buy-go">
+    发布
+  </view>
+</view>

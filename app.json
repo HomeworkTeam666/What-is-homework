@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/Mine/index",
+    "pages/submit/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f48fb1",
+    "navigationBarTitleText": "作业是啥",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#f48fb1",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_active.png",
+        "text": "作业列表"
+      },
+      {
+        "pagePath": "pages/submit/index",
+        "iconPath": "images/icon_profile.png",
+        "selectedIconPath": "images/icon_profile_active.png",
+        "text": "发布作业"
+      },
+      {
+        "pagePath": "pages/Mine/index",
+        "iconPath": "images/icon_profile.png",
+        "selectedIconPath": "images/icon_profile_active.png",
+        "text": "My作业"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

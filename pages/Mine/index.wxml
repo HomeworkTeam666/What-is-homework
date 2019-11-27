@@ -1,0 +1,13 @@
+<!--pages/profile/index.wxml-->
+<view class="profile-top">
+  
+</view>
+<view class="profile-row">
+编辑个人资料
+</view>
+<view class="profile-row">
+创建我的课程
+</view>
+<view class="profile-row">
+作业提醒
+</view>

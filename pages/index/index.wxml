@@ -1,0 +1,86 @@
+<!-- <view class="page_bd">
+
+  <view class="panel">
+    <view class="weui-tab__content"> -->
+     
+      <!-- <view class="circle-area">
+        <view class="circle"> -->
+          <!-- <text>亲</text> -->
+        <!-- </view>
+        <view class="rectangle">
+          <text>请按时完成作业</text> -->
+        <!-- </view>
+        <view class="circle">
+          <!-- <text>加油</text> -->
+        <!-- </view> --> 
+      <!-- </view> -->
+
+      <view class="pdct-sort">
+        <!-- <text class="{{sort == 1 ? 'active' : ''}}" data-id="1" bindtap="sortClick">人气</text>
+        <text class="{{sort == 2 ? 'active' : ''}}" data-id="2" bindtap="sortClick">最新</text> -->
+      </view>
+
+      <view class="pdct-list">
+        <view class="pdct-item" bindtap="todetail">
+          <!-- <image src="https://img.alicdn.com/imgextra/i3/520557274/O1CN01cN45oP23bXWv8ZDkx_!!520557274.jpg"></image> -->
+          <view class="pdct-mid">
+            <text>作业信息</text>
+            <text></text>
+          </view>
+          <view class="pdct-right">
+            <view class="pdct-right-top"></view>
+            <text></text>
+            <text></text>
+            <text>未完成</text>
+          </view>
+        </view>
+        <view class="pdct-item">
+          <!-- <image src="https://img.alicdn.com/imgextra/i3/520557274/O1CN01cN45oP23bXWv8ZDkx_!!520557274.jpg" mode="aspectFit" /> -->
+          <view class="pdct-mid">
+            <text>作业信息</text>
+            <text></text>
+            <text></text>
+            <text></text>
+          </view>
+          <view class="pdct-right">
+            <view class="pdct-right-top"></view>
+            <text></text>
+            <text></text>
+            <text>未完成</text>
+          </view>
+        </view>
+        <view class="pdct-item">
+          <!-- <image src="https://img.alicdn.com/imgextra/i3/520557274/O1CN01cN45oP23bXWv8ZDkx_!!520557274.jpg" mode="aspectFit" /> -->
+          <view class="pdct-mid">
+            <text>作业信息</text>
+            <text></text>
+            <text></text>
+            <text></text>
+          </view>
+          <view class="pdct-right">
+            <view class="pdct-right-top"></view>
+            <text></text>
+            <text></text>
+            <text>已完成</text>
+          </view>
+        </view>
+        <view class="pdct-item">
+          <!-- <image src="https://img.alicdn.com/imgextra/i3/520557274/O1CN01cN45oP23bXWv8ZDkx_!!520557274.jpg" mode="aspectFit" /> -->
+          <view class="pdct-mid">
+            <text>作业信息</text>
+            <text></text>
+            <text></text>
+            <text></text>
+          </view>
+          <view class="pdct-right">
+            <view class="pdct-right-top"></view>
+            <text></text>
+            <text></text>
+            <text>已完成</text>
+          </view>
+        </view>
+      </view>
+    <!-- </view> -->
+  <!-- </view> -->
+
+<!-- </view> -->
