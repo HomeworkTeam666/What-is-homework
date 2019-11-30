@@ -24,9 +24,10 @@
         <view class="pdct-item">
           <!-- <image src="https://img.alicdn.com/imgextra/i3/520557274/O1CN01cN45oP23bXWv8ZDkx_!!520557274.jpg"></image> -->
           <view class="pdct-mid">
-            <text wx:if="{{item}}">{{item.SubmitDate}}</text>
-            <text wx:if="{{item}}">{{item.SubmitContent}}</text>
-            <text wx:if="{{item}}">{{item.SubmitRemark}}</text>
+            <text wx:if="{{item}}">{{(item.Date-item.Date%10000)/10000}}.{{(item.Date%10000-item.Date%100)/100}}</text>
+            <text wx:if="{{item}}">{{item.Date%100}}.00 : {{item.Courses}}</text>
+            <text wx:if="{{item}}">{{item.Content}}</text>
+            <text wx:if="{{item}}">{{item.Remark}}</text>
           </view>
           <view class="pdct-right">
             <view class="pdct-right-top"></view>

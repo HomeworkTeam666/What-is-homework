@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/Mine/index",
-    "pages/submit/index"
+    "pages/submit/index",
+    "pages/submitHomework/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -34,6 +35,12 @@
         "iconPath": "images/icon_profile.png",
         "selectedIconPath": "images/icon_profile_active.png",
         "text": "My作业"
+      },
+      {
+        "pagePath": "pages/submitHomework/index",
+        "iconPath": "images/icon_profile.png",
+        "selectedIconPath": "images/icon_profile_active.png",
+        "text": "布置作业"
       }
     ]
   },

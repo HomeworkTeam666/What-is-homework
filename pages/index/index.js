@@ -1,5 +1,9 @@
 
-
+function sortBy(field) {
+    return (x, y) => {
+        return x[field] - y[field]
+    }
+}
 Page({
   data: {
     tabs: ["选项", "选项", "选项", "选项", "选项", "选项", "选项", "选项", "选项", "选项"],
@@ -13,18 +17,20 @@ Page({
 
     sort: 1
   },
-
-    onLoad: function (options) {
+    onShow: function (options) {
         
         const db = wx.cloud.database()
 
-        db.collection('Courses').where({
-                _openid: this.data.openid
+        db.collection('Homework').where({
+                _openid: this.data.openid,
+                done: false
         }).get({
                 success: res => {
+                    var temp = res.data
+                    temp.sort(sortBy("Date"));
                     this.setData
                         ({
-                            array: res.data
+                            array: temp
                         })
                     console.log('[数据库] [查询记录] 成功: ', res)
                     return res
