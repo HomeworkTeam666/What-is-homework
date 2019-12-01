@@ -6,7 +6,6 @@ function sortBy(field) {
 }
 Page({
   data: {
-    tabs: ["选项", "选项", "选项", "选项", "选项", "选项", "选项", "选项", "选项", "选项"],
     activeIndex: 0,
 
     indicatorDots: false,
@@ -14,11 +13,10 @@ Page({
     interval: 5000,
     duration: 1000,
     array:'',
-
+    idd:'',
     sort: 1
   },
     onShow: function (options) {
-        
         const db = wx.cloud.database()
 
         db.collection('Homework').where({

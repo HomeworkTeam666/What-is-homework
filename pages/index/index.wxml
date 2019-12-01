@@ -33,7 +33,7 @@
             <view class="pdct-right-top"></view>
             <text></text>
             <text></text>
-            <text>未完成</text>
+            <text>未完成{{idd}}</text>
           </view>
         </view>
       </view>

@@ -1,0 +1,25 @@
+<!--pages/createCourse/index.wxml-->
+<text>pages/createCourse/index.wxml</text>
+<form bindsubmit="createCourse">
+    <view class='index_seach'>
+        <view class='input_w professional'>
+            <text class='left'>课程</text>
+            <view class='input left'>
+                <textarea placeholder='请输入课程名称' cursor-spacing='20' name='courseName'></textarea>
+            </view>
+        </view>
+        <view class='input_w professional'>
+            <text class='left'>任课老师</text>
+                <view class='input left'>
+                    <textarea placeholder='请输入任课老师名字' cursor-spacing='20' name='teacher'></textarea>
+                </view>
+        </view>
+        <view class='textarea_w'>
+            <text class='left'>课代表</text>
+                <view class='textarea left'>
+                    <textarea placeholder='请输入课代表名字' cursor-spacing='20' name="studentName"></textarea>
+                </view>
+        </view>
+        <button class='subClass_btn2' formType="submit">确定</button>
+    </view>
+</form>

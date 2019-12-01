@@ -1,24 +1,37 @@
-// pages/submitHomework/index.js
+// pages/createCourse/index.js
+var chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+function generateMixed(n) {
+    var res = "";
+    for (var i = 0; i < n; i++) {
+        var id = Math.ceil(Math.random() * 35);
+        res += chars[id];
+    }
+    return res;
+
+}
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        courses: "微机原理"
+        Random:'',
+        openid:''
     },
 
-    submitHomework: function (e) {
+    createCourse: function (e) {
 
         const db = wx.cloud.database()
-
-        db.collection('Homework').add({
+        var Random = generateMixed(5)
+        db.collection('Courses').add({
             data: {
-                Courses: this.data.courses,
-                Date: e.detail.value.SubmitDate,
-                Content: e.detail.value.SubmitContent,
-                Remark: e.detail.value.SubmitRemark,
-                done: false
+                Courses: e.detail.value.courseName,
+                Teacher: e.detail.value.teacher,
+                StudentName: e.detail.value.studentName,
+                ClassId: Random,
+                Members: [this.data.openid]
             },
             success: res => {
                 console.log(res)
@@ -29,8 +42,14 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.setData({
-            courses: options.Course
+        wx.cloud.callFunction({
+            name: "test",
+            complete: res => {
+                this.setData({
+                    openid: res.result.openid
+                })
+                console.log('callFunction test result: ', res)
+            }
         })
     },
 

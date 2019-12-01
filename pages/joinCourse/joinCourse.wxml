@@ -1,0 +1,13 @@
+<!--pages/joinCourse/joinCourse.wxml-->
+<text>pages/joinCourse/joinCourse.wxml</text>
+<form bindsubmit="joinCourse">
+    <view class='index_seach'>
+        <view class='textarea_w'>
+            <text class='left'>班级暗号</text>
+            <view class='textarea left'>
+                <textarea placeholder='请输入班级暗号，五位数字或者大写字母' cursor-spacing='20' name='ClassId'></textarea>
+            </view>
+        </view>
+    </view>
+    <button class='subClass_btn2' formType="submit">确定</button>
+</form>

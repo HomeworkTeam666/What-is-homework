@@ -1,18 +1,40 @@
-// pages/profile/index.js
+// pages/joinCourse/joinCourse.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        openid:''
     },
 
+    joinCourse: function(e) {
+        const db = wx.cloud.database()
+        const _ = db.command
+        db.collection('Courses').where({
+            ClassId: e.detail.value.ClassId
+        }).update({
+            data: {
+                Members : _.push(this.data.openid)
+            },
+            success: res => {
+                console.log(res)
+            }
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        wx.cloud.callFunction({
+            name: "test",
+            complete: res => {
+                this.setData({
+                    openid: res.result.openid
+                })
+                console.log('callFunction test result: ', res)
+            }
+        })
     },
 
     /**
@@ -62,15 +84,5 @@ Page({
      */
     onShareAppMessage: function() {
 
-    },
-    ToCreateCourse: function(e) {
-        wx.navigateTo({
-            url: "../createCourse/index"
-        })
-    },
-    ToJoinCourse: function(e) {
-        wx.navigateTo({
-            url: "../joinCourse/joinCourse"
-        })
     }
 })

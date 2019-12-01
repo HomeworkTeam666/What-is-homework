@@ -1,6 +1,6 @@
 <!--pages/submitHomework/index.wxml-->
 <text>为  {{courses}}  发布新作业</text>
-<form bindsubmit="onTrial">
+<form bindsubmit="submitHomework">
     <view class='index_seach'>
         <view class='input_w professional'>
             <text class='left'>时间</text>
