@@ -5,9 +5,9 @@
 <view class="profile-row">
 编辑个人资料
 </view>
-<view class="profile-row">
+<view class="profile-row" bindtap="ToCreateCourse">
 创建我的课程
 </view>
-<view class="profile-row">
-作业提醒
+<view class="profile-row" bindtap="ToJoinCourse">
+加入课程
 </view>

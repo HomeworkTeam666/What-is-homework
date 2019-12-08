@@ -1,0 +1,25 @@
+<!--pages/submitHomework/index.wxml-->
+<text>为  {{courses}}  发布新作业</text>
+<form bindsubmit="submitHomework">
+    <view class='index_seach'>
+        <view class='input_w professional'>
+            <text class='left'>时间</text>
+            <view class='input left'>
+                <textarea placeholder='请输入时间，格式如010213' cursor-spacing='20' name='SubmitDate'></textarea>
+            </view>
+        </view>
+        <view class='input_w professional'>
+            <text class='left'>内容</text>
+                <view class='input left'>
+                    <textarea placeholder='请输入作业内容' cursor-spacing='20' name='SubmitContent'></textarea>
+                </view>
+        </view>
+        <view class='textarea_w'>
+            <text class='left'>备注</text>
+                <view class='textarea left'>
+                    <textarea placeholder='请输入作业备注' cursor-spacing='20' name="SubmitRemark"></textarea>
+                </view>
+        </view>
+        <button class='subClass_btn2' formType="submit">确定</button>
+    </view>
+</form>

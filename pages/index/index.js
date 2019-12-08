@@ -13,9 +13,79 @@ Page({
 
     sort: 1
   },
-
+  onShow: function () {
+    wx.request({
+      url: 'http://47.99.194.172/homeworkQuery',
+      data: { classid: this.data.openid },
+      header: { 'Content-Type': 'application/json' },
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: res => {
+        this.setData
+          ({
+            array: res.data
+          })
+        console.log('[数据库] [查询记录] 成功: ', res)
+        return res
+      },
+      fail: err => {
+        wx.showToast
+          ({
+            icon: 'none',
+            title: '查询记录失败'
+          })
+        console.error('[数据库] [查询记录] 失败：', err)
+      },
+      complete: function (res) { },
+    })
+  },
     onLoad: function (options) {
-        
+      var app = getApp();
+      wx.request({
+        url: 'http://47.99.194.172/studentIDQuery',
+        data: {studentid:app.globalData.openid},
+        header: {'Content-type':'application/json'},
+        method: 'GET',
+        dataType: 'json',
+        responseType: 'text',
+        success: res => {
+          if(res.data.message == "Not Found")
+          {
+            console.log("您当前未加入任何一个班级！")
+          }
+          else {
+           wx.request({
+              url: 'http://47.99.194.172/homeworkQuery',
+              data: { classid: this.data.openid },
+              header: { 'Content-Type': 'application/json' },
+              method: 'GET',
+              dataType: 'json',
+              responseType: 'text',
+              success: res => {
+                this.setData
+                  ({
+                    array: res.data
+                  })
+                console.log('[数据库] [查询记录] 成功: ', res)
+                return res
+              },
+              fail: err => {
+                wx.showToast
+                  ({
+                    icon: 'none',
+                    title: '查询记录失败'
+                  })
+                console.error('[数据库] [查询记录] 失败：', err)
+              },
+              complete: function (res) { },
+            })
+          }
+          return res;
+        }
+      })
+      
+        /*
         const db = wx.cloud.database()
 
         db.collection('Courses').where({
@@ -38,6 +108,7 @@ Page({
                     console.error('[数据库] [查询记录] 失败：', err)
                 }
             })
+      */
     },
 
   tabClick: function (e) {
@@ -72,10 +143,26 @@ Page({
       duration: e.detail.value
     })
   },
-  todetail(){
-    wx.switchTab({
-      url: '../detail/index',
+  showdetail: function(e){
+    console.log(e.currentTarget.dataset.homeworkhash)
+    wx.navigateTo({
+      url: '../detail/index?classname='+e.currentTarget.dataset.classname+'&content='+e.currentTarget.dataset.content +'&deadline='+e.currentTarget.dataset.deadline+'&remark='+e.currentTarget.dataset.remark+'&teacher='+e.currentTarget.dataset.teacher+'&assistant='+e.currentTarget.dataset.assistant
     })
 
+  },
+  finish: function(e){
+    console.log('finish')
+    wx.request({
+      url: 'http://47.99.194.172/finishHomework',
+      data:{homeworkhash:e.currentTarget.dataset.homeworkhash,
+      openid:getApp().globalData.openid,},
+      header:{'Content-type':'application/x-www-form-urlencoded'},
+      method:'POST',
+      success: res => {
+      wx.showToast({
+        title: '作业已完成！',
+      })
+    }
+    })
   }
 });

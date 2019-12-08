@@ -1,0 +1,24 @@
+<!--pages/detail/index.wxml-->
+<text>pages/detail/index.wxml</text>
+<!--pages/details/index.wxml-->
+<view class="profile-ttt">
+  <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请同学们及时认真完成作业~ \n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;完成作业方可放飞自我！！</text>
+</view>
+<view class="profile-ddd">
+课程名称：{{classname}}
+</view>
+<view class="profile-ddd">
+作业：{{content}}
+</view>
+<view class="profile-ddd">
+作业截止时间：{{deadline}}
+</view>
+<view class="profile-ddd">
+备注：{{remark}}
+</view>
+<view class="profile-ddd">
+任课老师：{{teacher}}
+</view>
+<view class="profile-ddd">
+课代表：{{assistant}}
+</view>

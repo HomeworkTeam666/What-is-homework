@@ -17,7 +17,10 @@ App({
             })
         }
 
-    this.globalData = {}
+    this.globalData = {
+      userInfo: null,
+      openid: ''
+    }
 
     wx.checkSession({
       success: function () {
@@ -28,11 +31,58 @@ App({
         wx.login({
           success: res => {
             // 发送 res.code 到后台换取 openId, sessionKey, unionId
-            UserService.login(res.code);
+            //UserService.login(res.code);
+            var Params = {
+              code: res.code, //临时登录凭证
+              //key: self.data.MD5Key
+            };
+            //生成加密key
+            //Params.key = self.MD5(Params.code + "&" + self.getNowTime() + "&" + Params.key);
+            wx.request({
+              url: 'http://47.99.194.172/getOpenId', //此处填写第三方的接口地址
+              data: '=' + JSON.stringify(Params),
+              header: {
+                'content-type': 'application/json'
+              },
+              method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+              success: function (res) {
+                var openid = res.data.RntData.openid //返回openid
+                this.data.openid = openid;
+                console.log(openid);
+              }
+            })
           }
+          
         });
       }
     })
+    var self=this;
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        //UserService.login(res.code);
+        console.log("code:"+res.code);
+        //生成加密key
+        //Params.key = this.MD5(Params.code + "&" + this.getNowTime() + "&" + Params.key);
+        wx.request({
+          url: 'http://47.99.194.172/getOpenId', //此处填写第三方的接口地址
+          data: {code:res.code},
+          header: {
+            'content-type': 'application/json'
+          },
+          method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+          dataType:'json',
+          responseType: 'text',
+          success: function (res) {
+            var openid = res.data.openid //返回openid
+            console.log(openid);
+            self.globalData.openid = openid;
+
+          }
+        })
+      }
+
+    });
 
     // 获取用户信息
     wx.getSetting({
@@ -57,8 +107,6 @@ App({
       }
     })
     
-  },
-  globalData: {
-    userInfo: null
   }
+
 })

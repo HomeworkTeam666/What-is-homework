@@ -23,16 +23,17 @@
       <view class="pdct-list">
         <view class="pdct-item">
           <!-- <image src="https://img.alicdn.com/imgextra/i3/520557274/O1CN01cN45oP23bXWv8ZDkx_!!520557274.jpg"></image> -->
-          <view class="pdct-mid">
-            <text wx:if="{{item}}">{{item.SubmitDate}}</text>
-            <text wx:if="{{item}}">{{item.SubmitContent}}</text>
-            <text wx:if="{{item}}">{{item.SubmitRemark}}</text>
+          <view class="pdct-mid" data-deadline='{{item.deadline}}' data-content='{{item.content}}'  data-remark='{{item.remark}}' data-teacher='{{item.teacher}}' data-assistant="{{item.assistant}}" data-classname='{{item.classname}}'  bindtap="showdetail">
+            <text wx:if="{{item}}" >最晚提交时间：{{item.deadline}}</text>
+            <text wx:if="{{item}}">{{item.Date%100}}.00 : {{item.Courses}}</text>
+            <text wx:if="{{item}}" >{{item.content}}</text>
+            <text wx:if="{{item}}">备注：{{item.remark}}</text>
           </view>
-          <view class="pdct-right">
+          <view class="pdct-right"  data-homeworkhash='{{item.homeworkhash}}' bindtap="finish">
             <view class="pdct-right-top"></view>
             <text></text>
             <text></text>
-            <text>未完成</text>
+            <text>未完成{{idd}}</text>
           </view>
         </view>
       </view>

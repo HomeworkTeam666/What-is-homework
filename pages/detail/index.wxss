@@ -1,0 +1,15 @@
+/* pages/detail/index.wxss */
+.profile-ttt{
+  width: 100%;
+  height: 160rpx;
+  font-size: 45rpx;
+  background: #9ee1ec;
+}
+
+.profile-ddd{
+  height: 100rpx;
+  padding: 20rpx;
+  font-size: 35rpx;
+  background: #fff;
+  box-shadow: 0rpx 2rpx 0rpx #ccc;
+}

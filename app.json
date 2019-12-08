@@ -2,11 +2,15 @@
   "pages": [
     "pages/index/index",
     "pages/Mine/index",
-    "pages/submit/index"
+    "pages/submit/index",
+    "pages/submitHomework/index",
+    "pages/joinCourse/joinCourse",
+    "pages/createCourse/index",
+    "pages/detail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#f48fb1",
+    "navigationBarBackgroundColor": "#dd09ba",
     "navigationBarTitleText": "作业是啥",
     "navigationBarTextStyle": "white",
     "backgroundColor": "#fff"
@@ -15,7 +19,7 @@
     "color": "#999999",
     "selectedColor": "#f48fb1",
     "borderStyle": "black",
-    "backgroundColor": "#ffffff",
+    "backgroundColor": "#e7dbdf",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -25,15 +29,15 @@
       },
       {
         "pagePath": "pages/submit/index",
-        "iconPath": "images/icon_profile.png",
-        "selectedIconPath": "images/icon_profile_active.png",
-        "text": "发布作业"
+        "iconPath": "images/icon_search.png",
+        "selectedIconPath": "images/icon_search.png",
+        "text": "加课程/作业"
       },
       {
         "pagePath": "pages/Mine/index",
         "iconPath": "images/icon_profile.png",
         "selectedIconPath": "images/icon_profile_active.png",
-        "text": "My作业"
+        "text": "我的基地"
       }
     ]
   },
