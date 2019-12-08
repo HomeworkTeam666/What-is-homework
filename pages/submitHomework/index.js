@@ -66,8 +66,9 @@ Page({
       url: 'http://47.99.194.172/submitHomework',
       data: {
         content: e.detail.value.SubmitContent,
-        deadline: e.detail.value.SubmitDate,
+        deadline: e.detail.value.SubmitDate.substring(0, e.detail.value.SubmitDate.length-2),
         remarks: e.detail.value.SubmitRemark,
+        duetime: e.detail.value.SubmitDate.substring(e.detail.value.SubmitDate.length-2)+"0000",
         classid: this.data.classid,
       },
       header: { 'Content-Type': 'application/x-www-form-urlencoded' },
